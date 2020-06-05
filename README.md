@@ -1,16 +1,45 @@
-# chat_app
+<div align="center">
 
-A new Flutter project.
+# Chat Application
+[![](https://img.shields.io/badge/Made_with-Flutter-red?style=for-the-badge&logo=flutter)](https://flutter.dev/)
+[![](https://img.shields.io/badge/Made_with-Firebase-red?style=for-the-badge&logo=firebase)](https://firebase.google.com/)
+[![](https://img.shields.io/badge/IDE-Visual_Studio_Code-red?style=for-the-badge&logo=visual-studio-code)](https://code.visualstudio.com/  "Visual Studio Code")
+</div>
 
-## Getting Started
+## Sign Up Page
 
-This project is a starting point for a Flutter application.
+<img src="images/signup.jpg" alt="" width="250" height="500">
 
-A few resources to get you started if this is your first Flutter project:
+## Login Page
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="images/login.jpg" alt="" width="250" height="500">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Home Page
+
+<img src="images/home.jpg" alt="" width="250" height="500">
+
+## Chat Screen Page
+
+<img src="images/chatscreen.jpg" alt="" width="250" height="500">
+
+## Settings Page
+
+<img src="images/settings.jpg" alt="" width="250" height="500">
+
+#### How to Run- 
+
+```html
+Download the app-debug.apk file in \build\app\outputs\apk\debug
+```
+
+###  Tech stack
+`Implemented on` : Visual Studio  <br>
+`Language` : Dart<br>
+`Framework` : Flutter <br>
+`Database and Authentication` : FireBase <br>
+
+## To develop further
+
+- [ ] Add `follow` feature where user can message to only those users who he/she follows
+- [X] Fixing `signup` bug
+- [ ] Adding a feature that allows user to `delete` their message

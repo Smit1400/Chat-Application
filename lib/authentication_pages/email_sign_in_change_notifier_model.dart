@@ -1,6 +1,7 @@
 import 'package:chat_app/authentication_pages/validators.dart';
 import 'package:chat_app/models/user.dart';
 import 'package:chat_app/services/auth.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 enum EmailSignFormType { Register, Login }
@@ -45,7 +46,7 @@ class EmailSignInChangeNotifierModel
       } else {
         await auth.signInUserWithEmailAndPassword(email, password);
       }
-    } catch (e) {
+    } on PlatformException catch (e) {
       rethrow;
     } finally {
       updateWith(loading: false);

@@ -66,12 +66,13 @@ class _EmailSignInPageState extends State<EmailSignInPage> {
     try {
       await widget.model.submit();
     } on PlatformException catch (e) {
+      print("${e.code} , ${e.details}, ${e.message}");
       showDialog(
         context: context,
         builder: (BuildContext context) {
           // return object of type Dialog
           return AlertDialog(
-            title: new Text("Sign In Failed"),
+            title: new Text("${e.code}"),
             content: new Text("${e.details}"),
             actions: <Widget>[
               // usually buttons at the bottom of the dialog

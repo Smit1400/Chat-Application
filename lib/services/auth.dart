@@ -37,8 +37,24 @@ class AuthService extends Auth {
       await reference.setData(data);
       FirebaseUser user = authResult.user;
       return _userFromFirebase(user);
-    } catch (e) {
+    } on PlatformException catch (e) {
       print(e.toString());
+      if (e.code == 'ERROR_WEAK_PASSWORD') {
+        throw PlatformException(
+            code: 'Weak Password',
+            details: 'Password length should be atleas 6 characters');
+      } else if (e.code == 'ERROR_INVALID_EMAIL') {
+        throw PlatformException(
+            code: 'Invalid Email',
+            details: 'The email address is badly formatted.');
+      } else if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
+        throw PlatformException(
+            code: 'Email Already exists', details: 'Login into the app');
+      } else {
+        throw PlatformException(
+            code: 'Some error occured',
+            details: 'Try again later or check your internet connection');
+      }
     }
   }
 
@@ -49,8 +65,26 @@ class AuthService extends Auth {
           email: email, password: password);
       FirebaseUser user = authResult.user;
       return _userFromFirebase(user);
-    } catch (e) {
+    } on PlatformException catch (e) {
       print(e.toString());
+      if (e.code == 'ERROR_WEAK_PASSWORD') {
+        throw PlatformException(
+            code: 'Weak Password',
+            details: 'Password length should be atleast 6 characters');
+      } else if (e.code == 'ERROR_INVALID_EMAIL') {
+        throw PlatformException(
+            code: 'Invalid Email',
+            details: 'The email address is badly formatted');
+      } else if (e.code == 'ERROR_USER_NOT_FOUND') {
+        throw PlatformException(
+            code: 'User not Found',
+            details:
+                'There is no user record corresponding to this credentials, create an account');
+      } else {
+        throw PlatformException(
+            code: 'Some error occured',
+            details: 'Try again later or check your internet connection');
+      }
     }
   }
 
